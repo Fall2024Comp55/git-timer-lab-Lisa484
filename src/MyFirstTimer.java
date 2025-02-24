@@ -10,7 +10,7 @@ public class MyFirstTimer extends GraphicsProgram implements ActionListener {
 	public static final int MAX_STEPS = 20;
 	
 	private GLabel myLabel;
-	private Timer someTimeVar;
+	private Timer someTimerVar;
 	private int count = 0;
 	
 
@@ -20,16 +20,16 @@ public class MyFirstTimer extends GraphicsProgram implements ActionListener {
 	}
 	
 	public void run() {
-		myLabel = new GLabel("times called? ", 1, 100);
+		myLabel = new GLabel("times called? ", 0, 100);
 		add(myLabel);
 		
 		//ball b = new ball();
 		//add(b.getball());
 		
 		
-		someTimeVar = new Timer(1000, this);
-		someTimeVar.setInitialDelay(3000);
-		someTimeVar.start();
+		someTimerVar = new Timer(1000, this);
+		someTimerVar.setInitialDelay(3000);
+		someTimerVar.start();
 		
 	}
 	
@@ -39,7 +39,7 @@ public class MyFirstTimer extends GraphicsProgram implements ActionListener {
 		myLabel.move(5, 0);
 		count++;
 		if (count == 10) {
-			someTimeVar.stop();
+			someTimerVar.stop();
 		}
 	}
 	
